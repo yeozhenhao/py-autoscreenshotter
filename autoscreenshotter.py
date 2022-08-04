@@ -16,14 +16,16 @@ from scipy.linalg import norm
 
 import numpy as np
 
+
 HOTKEY_MODE = False
 hotkey_to_screenshot = 'ctrl+l'
 
 ## Options to modify image arrays before comparing
-black_threshold = 10 ## Default = 50
-percentage_black_threshold = 0.95
-SS_size_x, SS_size_y = (890, 520) # Default 740, 550
-SS_loc_offset_x, SS_loc_offset_y = (0, 160) # Default is 50, 280 #120, 220
+black_threshold = 50 ## Default = 50
+percentage_black_threshold = 0.987
+
+SS_size_x, SS_size_y = (950, 580) # Default 740, 550
+SS_loc_offset_x, SS_loc_offset_y = (50, 130) # Default is 50, 280 #120, 220
 
 pause_time = 4.5 # seconds
 
@@ -185,6 +187,7 @@ if __name__ == "__main__":
     screenshot_count = 0
     if HOTKEY_MODE is True:
         while True:
+            time.sleep(0.1)
             print(f"HOTKEY_MODE is True: press {hotkey_to_screenshot} to screenshot!")
             try:  # used try so that if user pressed other than the given key error will not be shown
                 if keyboard.is_pressed(hotkey_to_screenshot):  # if key 'q' is pressed
