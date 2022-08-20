@@ -22,13 +22,12 @@ hotkey_to_screenshot = 'ctrl+l'
 
 ## Options to modify image arrays before comparing
 black_threshold = 50 ## Default = 50
-percentage_black_threshold = 0.980
+percentage_black_threshold = 0.985
 
-SS_size_x, SS_size_y = (880, 465) # Default 740
-# , 550
-SS_loc_offset_x, SS_loc_offset_y = (10, 135) # Default is 50, 280 #120, 220
+SS_size_x, SS_size_y = (790, 600) # Default 740, 550
+SS_loc_offset_x, SS_loc_offset_y = (280, 110) # Default is 50, 280 #120, 220
 
-pause_time = 2.0 # seconds before it checks again
+pause_time = 3 # seconds
 
 resize_img_smaller = False
 resize_to = (100, 56)
@@ -39,7 +38,7 @@ normalise_img = False
 # z_norm_diff_cutoff = 1900
 fail_safe_boolean = False # When fail-safe mode is True, moving the mouse to the upper-left will raise a pyautogui.FailSafeException that can abort your program:
 
-zoom_pic_file_loc = 'pics\zoomicon.png'
+zoom_pic_file_loc = 'pics\MSTeamsicon.png'
 Word_save_icon_file_loc = 'pics\saveicon.png'
 
 def send_to_clipboard(PIL_img):
