@@ -33,7 +33,8 @@ B. Clone the repository: *Open the main page of the repository in browser. click
 *This will open up the entire script as a project*
 
 **6. You need to install the required modules in your project environment to run the scripts.**\
-You may use ***requirements.txt*** when **PyCharm** automatically detects it in the project *(but module versions may not be the latest)*, **OR** do the following to get the latest versions of the required modules:\
+You may use ***requirements.txt*** when **PyCharm** automatically detects it in the project *(but module versions may not be the latest)*, **OR** do the following to get the latest versions of the required modules:
+
 A. Click "File" (in the top left corner), then click "Settings".
 
 B. Click the "Project Interpreter" under the Project Tab on the left, then click Python Interpreter dropdown list, then click "Show All"\
