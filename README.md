@@ -5,7 +5,6 @@
 
 ## Set-up Basics (in photos)
 *If you are an experienced coder you can skip this step & go on to Set-up Advanced section*\
-
 ***Note: the photos shown are ONLY FOR REFERENCE - the photos may not exactly match the steps described.***
 
 ####
