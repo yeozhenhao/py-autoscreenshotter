@@ -17,7 +17,7 @@ from scipy.linalg import norm
 import numpy as np
 
 
-HOTKEY_MODE = False
+HOTKEY_MODE = True
 hotkey_to_screenshot = 'ctrl+l'
 
 ## Options to modify image arrays before comparing
@@ -28,7 +28,7 @@ SS_size_x, SS_size_y = (880, 465) # Default 740
 # , 550
 SS_loc_offset_x, SS_loc_offset_y = (10, 135) # Default is 50, 280 #120, 220
 
-pause_time = 2.0 # seconds before it checks again
+pause_time = 3.0 # seconds before it checks again
 
 zoom_pic_file_loc = 'pics\zoomicon.png'
 Word_save_icon_file_loc = 'pics\saveicon.png'
@@ -187,7 +187,7 @@ if __name__ == "__main__":
     screenshot_count = 0
     if HOTKEY_MODE is True:
         while True:
-            time.sleep(0.1)
+            time.sleep(0.8)
             print(f"HOTKEY_MODE is True: press {hotkey_to_screenshot} to screenshot!")
             try:  # used try so that if user pressed other than the given key error will not be shown
                 if keyboard.is_pressed(hotkey_to_screenshot):  # if key 'q' is pressed
