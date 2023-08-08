@@ -1,17 +1,16 @@
 import copy
-
 import pyautogui
 import keyboard
-import scipy
+# import scipy
 from PIL import ImageChops, Image
 import time
 
 from io import BytesIO
 import win32clipboard
 
-import sys
+# import sys
 import cv2
-from scipy import stats
+# from scipy import stats
 from scipy.linalg import norm
 
 import numpy as np
@@ -24,9 +23,9 @@ hotkey_to_screenshot = 'ctrl+;'
 black_threshold = 50 ## Default = 50
 percentage_black_threshold = 0.980 ## Default = 0.98
 
-SS_size_x, SS_size_y = (770, 585) # Default 740
+SS_size_x, SS_size_y = (770, 490) # Default 740
 # , 550
-SS_loc_offset_x, SS_loc_offset_y = (140, 180) # Default is 50, 280 #120, 220
+SS_loc_offset_x, SS_loc_offset_y = (120, 150) # Default is 50, 280 #120, 220
 
 pause_time = 6.0 # seconds before it checks again
 
@@ -61,8 +60,8 @@ def screenshot_and_save_to_word(PIL_img):
     # pyautogui.moveRel(0, 0, duration=0.1)
     pyautogui.click(clicks=1, interval=0, button='left')
     pyautogui.moveTo(old_cursor_position)
-    pyautogui.press('enter')
     pyautogui.hotkey('ctrl', 'v')
+    pyautogui.press('enter')
 
 
 
@@ -187,23 +186,22 @@ if __name__ == "__main__":
     screenshot_count = 0
     if HOTKEY_MODE is True:
         while True:
-            time.sleep(0.3)
-            time.sleep(0.8)
+            time.sleep(1.5)
             print(f"HOTKEY_MODE is True: press {hotkey_to_screenshot} to screenshot!")
-            try:  # used try so that if user pressed other than the given key error will not be shown
-                if keyboard.is_pressed(hotkey_to_screenshot):  # if key 'q' is pressed
-                    print('You pressed a Key!')
-                    loc = pyautogui.locateOnScreen(zoom_pic_file_loc, grayscale=False, confidence=.9)  # returns (left, top, width, height) of first place it is found
-                    if loc is None:
-                        print(f"Zoom image not found. \n")
-                        continue
-                    im = pyautogui.screenshot(region=(loc[0] + SS_loc_offset_x, loc[1] + SS_loc_offset_y, SS_size_x, SS_size_y))
-                    screenshot_and_save_to_word(im)
-                    screenshot_count += 1
-                    print(f"-----Screenshot No. {screenshot_count}  is saved-----\n")
-                    continue  # finishing the loop
-            except:
-                continue  # if user pressed a key other than the given key the loop will continue/break
+            # try:  # used try so that if user pressed other than the given key error will not be shown
+            if keyboard.is_pressed(hotkey_to_screenshot):  # if key 'q' is pressed
+                print('You pressed a Key!')
+                loc = pyautogui.locateOnScreen(zoom_pic_file_loc, grayscale=False, confidence=.9)  # returns (left, top, width, height) of first place it is found
+                if loc is None:
+                    print(f"Zoom image not found. \n")
+                    continue
+                im = pyautogui.screenshot(region=(loc[0] + SS_loc_offset_x, loc[1] + SS_loc_offset_y, SS_size_x, SS_size_y))
+                screenshot_and_save_to_word(im)
+                screenshot_count += 1
+                print(f"-----Screenshot No. {screenshot_count}  is saved-----\n")
+                continue  # finishing the loop
+            # except:
+            #     continue  # if user pressed a key other than the given key the loop will continue/break
     while screenshot_count == 0:
         loc = pyautogui.locateOnScreen(zoom_pic_file_loc, grayscale=False, confidence=.9) # returns (left, top, width, height) of first place it is found
         print(f"Looking for zoom image on screen: {loc}")
