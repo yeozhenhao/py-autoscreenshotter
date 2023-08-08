@@ -27,7 +27,8 @@ percentage_black_threshold = 0.985
 SS_size_x, SS_size_y = (790, 600) # Default 740, 550
 SS_loc_offset_x, SS_loc_offset_y = (280, 110) # Default is 50, 280 #120, 220
 
-pause_time = 3 # seconds
+pause_time_hotkey_mode = 1 # seconds before it checks again
+pause_time = 3 # seconds before it checks again
 
 resize_img_smaller = False
 resize_to = (100, 56)
@@ -187,7 +188,7 @@ if __name__ == "__main__":
     screenshot_count = 0
     if HOTKEY_MODE is True:
         while True:
-            time.sleep(0.1)
+            time.sleep(pause_time_hotkey_mode)
             print(f"HOTKEY_MODE is True: press {hotkey_to_screenshot} to screenshot!")
             try:  # used try so that if user pressed other than the given key error will not be shown
                 if keyboard.is_pressed(hotkey_to_screenshot):  # if key 'q' is pressed

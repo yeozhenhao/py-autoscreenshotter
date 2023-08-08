@@ -27,7 +27,7 @@ SS_size_x, SS_size_y = (770, 490) # Default 740
 # , 550
 SS_loc_offset_x, SS_loc_offset_y = (120, 150) # Default is 50, 280 #120, 220
 
-pause_time_hotkey_mode = 1.5 # seconds before it checks again
+pause_time_hotkey_mode = 1 # seconds before it checks again
 pause_time = 6.0 # seconds before it checks again
 
 zoom_pic_file_loc = 'pics\zoomicon.png'
